@@ -11,6 +11,7 @@ gem 'sqlite3'
 
 gem 'mysql2'
 
+gem 'active_model_serializers', '0.8.2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

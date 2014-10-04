@@ -4,7 +4,7 @@ class EmpresasController < ApplicationController
   def index
     @empresas = Empresa.all
 
-    render json: @empresas
+    render json: {empresa: @empresas}
   end
 
   # GET /empresas/1
@@ -12,7 +12,7 @@ class EmpresasController < ApplicationController
   def show
     @empresa = Empresa.find(params[:id])
 
-    render json: @empresa
+    render json: {empresa: @empresa}
   end
 
   # POST /empresas
