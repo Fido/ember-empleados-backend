@@ -13,7 +13,7 @@ class EmpresasControllerTest < ActionController::TestCase
 
   test "should create empresa" do
     assert_difference('Empresa.count') do
-      post :create, empresa: { direcion: @empresa.direcion, gerente: @empresa.gerente, nit: @empresa.nit, nombre: @empresa.nombre, telefono: @empresa.telefono }
+      post :create, empresa: { direccion: @empresa.direccion, gerente: @empresa.gerente, nit: @empresa.nit, nombre: @empresa.nombre, telefono: @empresa.telefono }
     end
 
     assert_response 201
@@ -25,7 +25,7 @@ class EmpresasControllerTest < ActionController::TestCase
   end
 
   test "should update empresa" do
-    put :update, id: @empresa, empresa: { direcion: @empresa.direcion, gerente: @empresa.gerente, nit: @empresa.nit, nombre: @empresa.nombre, telefono: @empresa.telefono }
+    put :update, id: @empresa, empresa: { direccion: @empresa.direccion, gerente: @empresa.gerente, nit: @empresa.nit, nombre: @empresa.nombre, telefono: @empresa.telefono }
     assert_response 204
   end
 

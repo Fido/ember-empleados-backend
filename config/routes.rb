@@ -9,5 +9,4 @@ Rails.application.routes.draw do
       resources :empresas, except: [:new, :edit]
     end
   end
-
 end
