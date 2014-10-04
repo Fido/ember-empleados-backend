@@ -4,7 +4,7 @@ class EmpresasController < ApplicationController
   def index
     @empresas = Empresa.all
 
-    render json: {empresa: @empresas}
+    render json: @empresas
   end
 
   # GET /empresas/1
@@ -12,13 +12,13 @@ class EmpresasController < ApplicationController
   def show
     @empresa = Empresa.find(params[:id])
 
-    render json: {empresa: @empresa}
+    render json: @empresa
   end
 
   # POST /empresas
   # POST /empresas.json
   def create
-    @empresa = Empresa.new(params[:empresa])
+    @empresa = Empresa.new(params[:empresa_params])
 
     if @empresa.save
       render json: @empresa, status: :created, location: @empresa
@@ -32,7 +32,7 @@ class EmpresasController < ApplicationController
   def update
     @empresa = Empresa.find(params[:id])
 
-    if @empresa.update(params[:empresa])
+    if @empresa.update(params[:empresa_params])
       head :no_content
     else
       render json: @empresa.errors, status: :unprocessable_entity
@@ -47,4 +47,12 @@ class EmpresasController < ApplicationController
 
     head :no_content
   end
+
+  private
+
+  def empresa_params
+    params.require(:empresa).permit(:nombre, :gerente, :direccion, :telefono, :nit)
+  end
+
+
 end
